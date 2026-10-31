@@ -414,6 +414,8 @@
 /* ---------- fornecedores ---------- */
 .sup-list {
   display: grid;
+  /* sem o minmax(0, 1fr) a coluna cresce com o nome e o card vaza */
+  grid-template-columns: minmax(0, 1fr);
   gap: 16px;
   margin: 0;
   padding: 0;
@@ -421,6 +423,7 @@
 }
 .sup-list li {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 5px;
 }
 .sup-line {
@@ -430,7 +433,9 @@
   font-size: 0.86rem;
 }
 .sup-line strong {
+  flex: none;
   font-weight: 600;
+  white-space: nowrap;
 }
 .sup-bar {
   height: 8px;

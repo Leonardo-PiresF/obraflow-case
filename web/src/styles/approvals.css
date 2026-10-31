@@ -336,7 +336,18 @@
   font-weight: 500;
 }
 
-@container (max-width: 1020px) {
+/* a linha completa precisa de ~1120px; abaixo disso some a coluna do solicitante */
+@container (max-width: 1120px) {
+  .order-row {
+    grid-template-columns: 20px 140px minmax(150px, 1.5fr) 112px 112px minmax(120px, 1fr) 172px;
+  }
+  .order-head > :nth-child(4),
+  .c-req {
+    display: none;
+  }
+}
+
+@container (max-width: 950px) {
   .order-head {
     display: none;
   }
