@@ -11,7 +11,13 @@
   flex-direction: column;
   gap: 28px;
   height: 100vh;
+  height: 100dvh;
   padding: 22px 14px;
+  /* em tela baixa o rodapé (ator e tema) não pode ficar escondido */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--side-line) transparent;
   background: var(--side-bg);
   border-right: 1px solid var(--side-line);
   color: var(--side-ink);
@@ -250,6 +256,23 @@
 .theme-toggle button[aria-checked='true'] {
   background: var(--side-active);
   color: var(--side-strong);
+}
+
+/* notebook com pouca altura: aperta a barra para o rodapé caber sem rolar */
+@media (min-width: 861px) and (max-height: 800px) {
+  .sidebar {
+    gap: 16px;
+    padding: 16px 12px;
+  }
+  .nav-link {
+    padding: 7px 12px;
+  }
+  .sidebar-foot {
+    gap: 10px;
+  }
+  .actor-hint {
+    display: none;
+  }
 }
 
 /* ---------- card do autor ---------- */

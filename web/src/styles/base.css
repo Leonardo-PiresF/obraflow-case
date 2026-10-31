@@ -162,6 +162,12 @@
 html {
   -webkit-text-size-adjust: 100%;
 }
+/* em tela de notebook o texto em rem fica uns 10% menor; em monitor grande segue a 100% */
+@media (max-width: 1600px) {
+  html {
+    font-size: 90%;
+  }
+}
 
 body {
   margin: 0;
